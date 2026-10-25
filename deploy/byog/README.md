@@ -13,8 +13,10 @@ and the bucket capability probe are not built upstream. Do not plan around them.
 
 The upstream installer is
 [`deploy/release/byoc/install.sh`](https://github.com/ostrium-labs/loams/blob/v0.1.1/deploy/release/byoc/install.sh).
-It installs Docker over SSH, copies the compose bundle, writes `.env`, starts
-the stack, and waits for health. The VM needs **no inbound port**.
+It lives in the Loams repository, not in this template. Run the commands below
+from a checkout of the pinned tag (or the matching release bundle). It installs
+Docker over SSH, copies the compose bundle, writes `.env`, starts the stack, and
+waits for health. The VM needs **no inbound port**.
 
 ## Install
 

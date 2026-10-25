@@ -56,7 +56,7 @@ on `loams`, `actix-web`, or `tokio`.
 
 ## Logging and telemetry
 
-- `tracing` with structured fields.
+- Structured logs with fields (`log` in the starter; `tracing` is fine too).
 - Include request id, tenant, principal, operation, duration, outcome.
 - Never log documents, tokens, embeddings, or PII.
 - OTLP is optional; metrics and logs must still work without it.

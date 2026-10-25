@@ -1,4 +1,4 @@
-FROM rust:1.97-bookworm AS build
+FROM rust:1.97.1-bookworm AS build
 WORKDIR /src
 COPY starter/ ./starter/
 WORKDIR /src/starter
