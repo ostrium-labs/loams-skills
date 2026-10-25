@@ -23,7 +23,7 @@ jobs:
         run: scripts/check-reference.sh
       - name: Check links
         run: python3 scripts/check-links.py
-      - uses: peter-evans/create-pull-request@v7
+      - uses: peter-evans/create-pull-request@v8
         with:
           branch: chore/sync-reference
           title: "chore: sync upstream reference"
