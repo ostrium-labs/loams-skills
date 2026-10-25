@@ -1,0 +1,37 @@
+name: Feature request
+description: Propose a skill, starter capability, or deployment improvement.
+title: "feat: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What company migration or operation is hard today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should the template do instead?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: What did you try, and why is it not enough?
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - one skill
+        - starter
+        - deploy / BYOG
+        - company scaffolding
+        - scripts / CI
+        - docs
+    validations:
+      required: true

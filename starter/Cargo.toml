@@ -1,0 +1,25 @@
+[workspace]
+resolver = "3"
+members = ["crates/domain", "crates/platform", "crates/api"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97"
+license = "Apache-2.0"
+authors = ["Example Company"]
+
+[workspace.dependencies]
+anyhow = "1"
+actix-web = "4"
+buffa = "0.9"
+connectrpc = { version = "0.9.1", default-features = false, features = ["client"] }
+dotenvy = "0.15"
+loams = { version = "0.1.1", default-features = false }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tokio = { version = "1", features = ["macros", "net", "rt-multi-thread", "signal", "time"] }
+env_logger = "0.11"
+log = "0.4"
+uuid = { version = "1", features = ["v7"] }

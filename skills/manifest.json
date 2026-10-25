@@ -1,0 +1,150 @@
+{
+  "schema": 1,
+  "count": 16,
+  "skills": [
+    {
+      "name": "agent-platform",
+      "description": "Design an agent product on Loams: agentd, sandboxed runs, memory, durable execution, Studio, software factory, marketplace, and Mastra. Use when the company's product includes agents rather than only data services.",
+      "license": "Apache-2.0",
+      "path": "skills/agent-platform/SKILL.md",
+      "version": "0.1.0",
+      "reviewed": "2026-10-25",
+      "upstream": "ostrium-labs/loams@bc90297"
+    },
+    {
+      "name": "app-migration",
+      "description": "Migrate a service or bounded context to Rust on Loams with a strangler-fig plan: seams, API compatibility, dual-run, feature flags, canary, and rollback. Use when moving traffic from an existing service to the new implementation.",
+      "license": "Apache-2.0",
+      "path": "skills/app-migration/SKILL.md",
+      "version": "0.1.0",
+      "reviewed": "2026-10-25",
+      "upstream": "ostrium-labs/loams@bc90297"
+    },
+    {
+      "name": "byog-deploy",
+      "description": "Deploy Loams on the company's own ground (BYOG): AWS, GCP, or Azure one-VM light stack, tailnet access, no inbound ports, workload identity, pinned artifacts, backups, and upgrades. Use when installing, changing, or auditing a company Loams deployment.",
+      "license": "Apache-2.0",
+      "path": "skills/byog-deploy/SKILL.md",
+      "version": "0.1.0",
+      "reviewed": "2026-10-25",
+      "upstream": "ostrium-labs/loams@bc90297"
+    },
+    {
+      "name": "conformance-testing",
+      "description": "Design the test strategy for a Loams migration: unit, contract, integration, conformance, failure injection, load, and upgrade tests, with the gates that let a stage pass. Use when building the pilot or preparing for cutover.",
+      "license": "Apache-2.0",
+      "path": "skills/conformance-testing/SKILL.md",
+      "version": "0.1.0",
+      "reviewed": "2026-10-25",
+      "upstream": "ostrium-labs/loams@bc90297"
+    },
+    {
+      "name": "cutover-operations",
+      "description": "Prepare and run production cutover, rollback, backup and restore drills, upgrades, and day-2 operations for a Loams install. Use before the first production traffic and for every upgrade or incident.",
+      "license": "Apache-2.0",
+      "path": "skills/cutover-operations/SKILL.md",
+      "version": "0.1.0",
+      "reviewed": "2026-10-25",
+      "upstream": "ostrium-labs/loams@bc90297"
+    },
+    {
+      "name": "data-migration",
+      "description": "Plan and execute migration of company data into Loams from Postgres, MySQL, Elasticsearch, Qdrant, Neo4j, Kafka, ClickHouse, or object storage, with dual-write, backfill, verification, and rollback. Use after the pilot and before cutover.",
+      "license": "Apache-2.0",
+      "path": "skills/data-migration/SKILL.md",
+      "version": "0.1.0",
+      "reviewed": "2026-10-25",
+      "upstream": "ostrium-labs/loams@bc90297"
+    },
+    {
+      "name": "decision-records",
+      "description": "Record company architecture decisions for a Loams migration as ADRs, including the upstream decision they depend on, alternatives, consequences, and deviations. Use whenever a replace/keep/bridge choice, tenancy model, or cutover is decided.",
+      "license": "Apache-2.0",
+      "path": "skills/decision-records/SKILL.md",
+      "version": "0.1.0",
+      "reviewed": "2026-10-25",
+      "upstream": "ostrium-labs/loams@bc90297"
+    },
+    {
+      "name": "identity-authz",
+      "description": "Design authentication and authorization for a Loams install: company IdP and OIDC, Zitadel identities, OpenFGA tuples, machine users, agent tokens, least privilege, and audit. Use when adding users, services, agents, or tenants.",
+      "license": "Apache-2.0",
+      "path": "skills/identity-authz/SKILL.md",
+      "version": "0.1.0",
+      "reviewed": "2026-10-25",
+      "upstream": "ostrium-labs/loams@bc90297"
+    },
+    {
+      "name": "loams-adoption",
+      "description": "Plan, resume, or audit a company-wide migration to Loams on the company's own ground, with Rust for core services and the 13 SDKs at the edges. Use when starting adoption, deciding the next stage, or checking a migration gate.",
+      "license": "Apache-2.0",
+      "path": "skills/loams-adoption/SKILL.md",
+      "version": "0.1.0",
+      "reviewed": "2026-10-25",
+      "upstream": "ostrium-labs/loams@bc90297"
+    },
+    {
+      "name": "loams-fit",
+      "description": "Map each inventoried component to Loams primitives and decide replace, keep, bridge, or defer, with an ADR per component. Use after stack inventory and before target architecture.",
+      "license": "Apache-2.0",
+      "path": "skills/loams-fit/SKILL.md",
+      "version": "0.1.0",
+      "reviewed": "2026-10-25",
+      "upstream": "ostrium-labs/loams@bc90297"
+    },
+    {
+      "name": "loams-rust-sdk",
+      "description": "Integrate the loams Rust crate into a service: connect, namespaces, collections, documents, hybrid search, SQL, graph, streams, consistency tokens, idempotency, errors, and retries. Use when writing or reviewing the Rust data path.",
+      "license": "Apache-2.0",
+      "path": "skills/loams-rust-sdk/SKILL.md",
+      "version": "0.1.0",
+      "reviewed": "2026-10-25",
+      "upstream": "ostrium-labs/loams@bc90297"
+    },
+    {
+      "name": "observability-metering",
+      "description": "Instrument a Loams-backed stack: structured logs, metrics, traces, OTLP, dashboards, SLOs, alerts, usage metering, and cost per run. Use when a service goes to production or when cost and reliability need a baseline.",
+      "license": "Apache-2.0",
+      "path": "skills/observability-metering/SKILL.md",
+      "version": "0.1.0",
+      "reviewed": "2026-10-25",
+      "upstream": "ostrium-labs/loams@bc90297"
+    },
+    {
+      "name": "rust-workspace",
+      "description": "Create or extend the company's Rust workspace for Loams services: crate boundaries, edition and toolchain, errors, config, tracing, lints, and tests. Use when starting the Rust rewrite or adding a bounded context.",
+      "license": "Apache-2.0",
+      "path": "skills/rust-workspace/SKILL.md",
+      "version": "0.1.0",
+      "reviewed": "2026-10-25",
+      "upstream": "ostrium-labs/loams@bc90297"
+    },
+    {
+      "name": "sdk-portability",
+      "description": "Decide which services and clients stay in their language and use one of the 13 Loams SDKs, and keep behaviour identical across them with the conformance corpus. Use before rewriting an edge service or adding a language.",
+      "license": "Apache-2.0",
+      "path": "skills/sdk-portability/SKILL.md",
+      "version": "0.1.0",
+      "reviewed": "2026-10-25",
+      "upstream": "ostrium-labs/loams@bc90297"
+    },
+    {
+      "name": "stack-inventory",
+      "description": "Inventory a company's services, data stores, workflows, identity, deployment, and costs as the baseline for a Loams migration. Use at the start of adoption or when a system is missing from the inventory.",
+      "license": "Apache-2.0",
+      "path": "skills/stack-inventory/SKILL.md",
+      "version": "0.1.0",
+      "reviewed": "2026-10-25",
+      "upstream": "ostrium-labs/loams@bc90297"
+    },
+    {
+      "name": "target-architecture",
+      "description": "Design the target Loams topology: namespaces and tenancy, collection schemas, data flows, identity, deployment, capacity, and failure domains. Use after fit decisions and before building the pilot.",
+      "license": "Apache-2.0",
+      "path": "skills/target-architecture/SKILL.md",
+      "version": "0.1.0",
+      "reviewed": "2026-10-25",
+      "upstream": "ostrium-labs/loams@bc90297"
+    }
+  ]
+}

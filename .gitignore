@@ -1,0 +1,24 @@
+# Secrets
+.env
+.env.*
+!.env.example
+**/secrets/
+*.pem
+*.key
+
+# Rust
+target/
+**/target/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+
+# Generated
+skills/manifest.json.tmp

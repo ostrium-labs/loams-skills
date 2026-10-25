@@ -1,0 +1,17 @@
+Loams Skills Template
+Copyright 2026 The Loams Authors
+
+This repository is a template for adopting Loams. It is licensed under the
+Apache License, Version 2.0 (see LICENSE).
+
+The files under reference/ are a curated snapshot of documentation from the
+Loams project (https://github.com/ostrium-labs/loams), Copyright 2026 The Loams
+Authors, licensed under the Apache License, Version 2.0. The pinned upstream
+commit, file list, and content hashes are recorded in
+reference/upstream/SOURCE.md and reference/upstream/SHA256SUMS.
+
+The skills, company templates, starter workspace, and deployment examples in
+this repository are original to this template unless a file says otherwise.
+
+Loams is a trademark of Ostrium Labs. This template is not an official Loams
+distribution and is provided without warranty; see the LICENSE.

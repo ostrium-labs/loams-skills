@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Loams documentation
+    url: https://loams.dev/docs
+    about: Guides, the API, and the design documents.
+  - name: Security report
+    url: https://github.com/ostrium-labs/loams-skills/security/policy
+    about: Report a vulnerability privately; do not open an issue.

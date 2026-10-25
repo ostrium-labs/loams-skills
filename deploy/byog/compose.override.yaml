@@ -1,0 +1,11 @@
+# Optional override for the upstream deploy/release/compose.yaml.
+# It changes no port, network, or credential setting.
+services:
+  loams:
+    restart: unless-stopped
+    stop_grace_period: 60s
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "5"

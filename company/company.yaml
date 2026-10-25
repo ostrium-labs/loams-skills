@@ -1,0 +1,21 @@
+# Company configuration. Read by the skills. Do not commit secrets.
+company:
+  name: "Example Company"
+  slug: "example"
+  cloud: "aws"                 # aws | gcp | azure
+  region: "us-east-1"
+  oidc_issuer: "https://auth.example.com"
+  oidc_audience: "loams"
+loams:
+  version: "0.1.1"             # pin; never "latest"
+  namespace: "example"
+  endpoint: "https://loams.<tailnet>.ts.net"
+  auth_mode: "oidc"            # oidc | builtin
+deployment:
+  shape: "one-vm"              # one-vm | one-vm-tikv | kubernetes (not built upstream)
+  bucket: "s3://example-loams"
+  kms_key: "CHANGE_ME"
+  secret_store: "CHANGE_ME"
+edges:
+  rust: true
+  languages: []                # e.g. [typescript, python, go]

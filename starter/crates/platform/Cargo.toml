@@ -1,0 +1,14 @@
+[package]
+name = "platform"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+buffa.workspace = true
+connectrpc.workspace = true
+domain = { path = "../domain" }
+loams.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true

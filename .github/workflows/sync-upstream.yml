@@ -1,0 +1,39 @@
+name: sync upstream reference
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Upstream commit, tag, or branch
+        required: true
+        default: dev
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync curated reference
+        run: scripts/sync-reference.sh --ref "${{ inputs.ref }}"
+      - name: Verify hashes
+        run: scripts/check-reference.sh
+      - name: Check links
+        run: python3 scripts/check-links.py
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: chore/sync-reference
+          title: "chore: sync upstream reference"
+          commit-message: "chore: sync upstream reference"
+          body: |
+            Automated sync of the curated upstream snapshot.
+
+            Review `reference/upstream/SOURCE.md`, the `SHA256SUMS` diff, and any
+            changed design or plan text before merging. Do not merge a snapshot
+            that changes a decision the company relies on without an ADR.
+          add-paths: |
+            reference/
+            skills/manifest.json

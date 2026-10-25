@@ -1,0 +1,62 @@
+#cloud-config
+# AWS example. Replace every REPLACE_ value before use.
+#
+# The VM needs an instance role that can read the two secrets and read/write the
+# bucket. It needs no inbound port. The stack joins the company tailnet through
+# its own sidecar; the host does not need Tailscale installed.
+package_update: true
+packages:
+  - ca-certificates
+  - curl
+  - docker.io
+  - git
+  - jq
+  - unzip
+write_files:
+  - path: /usr/local/bin/loams-bootstrap
+    permissions: "0755"
+    owner: root:root
+    content: |
+      #!/usr/bin/env bash
+      set -euo pipefail
+      export DEBIAN_FRONTEND=noninteractive
+
+      VERSION="0.1.1"
+      BUCKET="s3://REPLACE_BUCKET"
+      REGION="REPLACE_REGION"
+      TS_SECRET="REPLACE_TAILSCALE_SECRET_ARN"
+      SETUP_SECRET="REPLACE_SETUP_TOKEN_SECRET_ARN"
+
+      # AWS CLI v2, used only with the instance role.
+      if ! command -v aws >/dev/null; then
+        curl -fsSL "https://awscli.amazonaws.com/awscli-exe-linux-$(uname -m).zip" -o /tmp/awscli.zip
+        unzip -q /tmp/awscli.zip -d /tmp
+        /tmp/aws/install
+      fi
+
+      TS_AUTHKEY="$(aws secretsmanager get-secret-value --region "$REGION" \
+        --secret-id "$TS_SECRET" --query SecretString --output text)"
+      SETUP_TOKEN="$(aws secretsmanager get-secret-value --region "$REGION" \
+        --secret-id "$SETUP_SECRET" --query SecretString --output text)"
+
+      install -d -m 0755 /opt/loams
+      if [[ ! -d /opt/loams/.git ]]; then
+        git clone --depth 1 --branch "v${VERSION}" \
+          https://github.com/ostrium-labs/loams.git /opt/loams
+      fi
+
+      cd /opt/loams/deploy/release
+      cp .env.example .env
+      sed -i "s|^LOAMS_VERSION=.*|LOAMS_VERSION=${VERSION}|" .env
+      sed -i "s|^LOAMS_BUCKET=.*|LOAMS_BUCKET=${BUCKET}|" .env
+      sed -i "s|^TS_AUTHKEY=.*|TS_AUTHKEY=${TS_AUTHKEY}|" .env
+      sed -i "s|^LOAMS_SETUP_TOKEN=.*|LOAMS_SETUP_TOKEN=${SETUP_TOKEN}|" .env
+      sed -i "s|^LOAMS_AUTH_MODE=.*|LOAMS_AUTH_MODE=tailscale|" .env
+      chmod 0600 .env
+
+      docker compose pull
+      docker compose up -d
+      docker compose ps
+runcmd:
+  - systemctl enable --now docker
+  - /usr/local/bin/loams-bootstrap

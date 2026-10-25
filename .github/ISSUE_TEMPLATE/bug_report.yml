@@ -1,0 +1,55 @@
+name: Bug report
+description: A skill, starter, validator, or deploy template is wrong or broken.
+title: "bug: "
+labels: [bug]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - skill
+        - starter (Rust)
+        - deploy / BYOG
+        - company template
+        - validator / scripts
+        - docs
+        - reference snapshot
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Loams version
+      description: The version in `company/company.yaml` or the starter `Cargo.toml`.
+      placeholder: "0.1.1"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: Include the command and the smallest reproduction you can.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Redact tokens, keys, bucket names, and customer data.
+      render: text
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I removed secrets and customer data from this report.
+          required: true
+        - label: This is not a security vulnerability (those go to SECURITY.md).
+          required: true

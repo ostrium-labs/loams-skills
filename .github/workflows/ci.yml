@@ -1,0 +1,43 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  template:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Validate skills
+        run: python3 scripts/validate-skills.py
+      - name: Check relative links
+        run: python3 scripts/check-links.py
+      - name: Check pinned reference
+        run: scripts/check-reference.sh
+      - name: Check template hygiene
+        run: scripts/check-template.sh
+
+  rust:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: starter
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.97.1
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: starter
+      - run: cargo fmt --check
+      - run: cargo clippy --all-targets -- -D warnings
+      - run: cargo test
