@@ -1285,9 +1285,9 @@ checksum = "47d9d19d1d6efa0109d2f65ff4c85cddd50bd572e5a00127ab10987290bcefae"
 
 [[package]]
 name = "loams"
-version = "0.1.1"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "01f608c9e1db44242166befefe7d00ce2af044159f286ddc8300c0ee8abc59b1"
+checksum = "620ae1cde37c6bb8bcbb2028d41f3ed31071fd9be073e0fb7d18e7d6ef410245"
 dependencies = [
  "async-trait",
  "base64",
@@ -1308,9 +1308,9 @@ dependencies = [
 
 [[package]]
 name = "loams-live-proto"
-version = "0.1.1"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d6787175114861a40c903475989788a894e6da66a5614620449c015c1b2cbc07"
+checksum = "29e5f65f599ca9561f6412f96b5a05f7f872b5625bd9770b03ef5edd54424ae8"
 dependencies = [
  "buffa",
  "connectrpc",
@@ -1320,9 +1320,9 @@ dependencies = [
 
 [[package]]
 name = "loams-proto"
-version = "0.1.1"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b4ceae5a0292833ec4f652ee7ef97f1617a97e6367f3248e54ec1349bc6fe429"
+checksum = "f8187435c572db83f9d014cd2449b5b098f61b1adf09ec57bb123ad9b108200f"
 dependencies = [
  "buffa",
  "buffa-types",
